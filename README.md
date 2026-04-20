@@ -50,10 +50,10 @@
 | Nama | NIM | Kelas | GitHub |
 |------|-----|-------|--------|
 | Yulius Pune' | 2409116110 | Sistem Informasi C '24 | [![GitHub](https://img.shields.io/badge/Oxcyy-181717?style=flat-square&logo=github&logoColor=white)](https://github.com/Oxcyy) |
-| Anggota 2 | - | - | - |
-| Anggota 3 | - | - | - |
-| Anggota 4 | - | - | - |
-| Anggota 5 | - | - | - |
+| Muhammad Fakhri Al-Kautsar | 2409116081 | Sistem Informasi C '24 | [![GitHub](https://img.shields.io/badge/Oxcyy-181717?style=flat-square&logo=github&logoColor=white)](https://github.com/Oxcyy) |
+| Yudha Tri Atmaja  | 2409116095 | Sistem Informasi C '24 | [![GitHub](https://img.shields.io/badge/Oxcyy-181717?style=flat-square&logo=github&logoColor=white)](https://github.com/Oxcyy) |
+| Elvira Agustin  | 2409116109 | Sistem Informasi C '24 | [![GitHub](https://img.shields.io/badge/Oxcyy-181717?style=flat-square&logo=github&logoColor=white)](https://github.com/Oxcyy) |
+| Rizky wahyu dina putri | 2409116111 | Sistem Informasi C '24 | [![GitHub](https://img.shields.io/badge/Oxcyy-181717?style=flat-square&logo=github&logoColor=white)](https://github.com/Oxcyy) |
 
 ---
 
