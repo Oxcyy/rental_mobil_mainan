@@ -45,7 +45,7 @@
 
 **Kelompok :** (isi nomor kelompok)  
 **Kelas :** Sistem Informasi  
-**Mata Kuliah :** Pemrograman Mobile
+**Mata Kuliah :** Pemrograman Aplikasi Bergerak
 
 | Nama | NIM | Kelas | GitHub |
 |------|-----|-------|--------|
