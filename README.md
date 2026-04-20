@@ -1,6 +1,7 @@
 <div align="center">
 
 # FARZATOYS RENTAL
+
 ### Aplikasi Manajemen Penyewaan Mobil Mainan
 
 [![Flutter](https://img.shields.io/badge/Flutter-02569B?style=for-the-badge&logo=flutter&logoColor=white)](https://flutter.dev)
@@ -11,40 +12,37 @@
 ![Platform](https://img.shields.io/badge/Platform-Android-green?style=flat-square&logo=android)
 ![Version](https://img.shields.io/badge/Version-1.0.0-blue?style=flat-square)
 ![License](https://img.shields.io/badge/License-MIT-yellow?style=flat-square)
-![Status](https://img.shields.io/badge/Status-Active-brightgreen?style=flat-square)
 
-> Proyek Akhir Mobile — dikembangkan dari Pra-Proyek Akhir
+*Proyek Akhir Mobile — dikembangkan dari Pra-Proyek Akhir*
 
 </div>
 
 ---
 
-## Deskripsi Aplikasi
+## Deskripsi
 
-**FARZATOYS RENTAL** adalah aplikasi mobile berbasis Flutter untuk membantu mitra usaha penyewaan mobil mainan dalam mengelola armada kendaraan, data penyewa, dan transaksi sewa secara efisien. Backend menggunakan **Supabase** yang mencakup autentikasi, database cloud, dan penyimpanan gambar.
+FARZATOYS RENTAL adalah aplikasi mobile berbasis Flutter untuk membantu mitra usaha penyewaan mobil mainan dalam mengelola armada kendaraan, data penyewa, dan transaksi sewa. Backend menggunakan Supabase yang mencakup autentikasi, database cloud, dan penyimpanan gambar.
 
 ---
 
-## Fitur Aplikasi
+## Fitur
 
-| No | Fitur | Deskripsi |
-|----|-------|-----------|
-| 1 | Login | Autentikasi email & password via Supabase Auth |
-| 2 | CRUD Unit Mobil | Tambah, lihat, edit, dan hapus data unit mobil mainan |
-| 3 | CRUD Data Penyewaan | Tambah transaksi, perbarui status, dan hapus data sewa |
-| 4 | Kalkulasi Biaya Otomatis | Total biaya dihitung berdasarkan `(menit ÷ 15) × Rp 20.000` |
-| 5 | Notifikasi Pengingat | Notifikasi terjadwal saat durasi sewa hampir habis |
-| 6 | Dark / Light Mode | Tema gelap dan terang yang bisa diubah kapan saja |
-| 7 | Upload Foto Mobil | Foto diambil dari kamera/galeri, disimpan ke Supabase Storage |
-| 8 | Dashboard Statistik | Ringkasan harian: total mobil, tersedia, sewa aktif, pendapatan |
+| Fitur | Deskripsi |
+|-------|-----------|
+| Login | Autentikasi email dan password via Supabase Auth |
+| CRUD Unit Mobil | Tambah, lihat, edit, dan hapus data unit mobil mainan |
+| CRUD Penyewaan | Tambah transaksi, perbarui status, dan hapus data sewa |
+| Kalkulasi Biaya | Total biaya dihitung otomatis: `(menit ÷ 15) × Rp 20.000` |
+| Notifikasi | Pengingat terjadwal saat durasi sewa hampir habis |
+| Dark / Light Mode | Tema gelap dan terang yang bisa diubah kapan saja |
+| Upload Foto | Foto mobil diambil dari kamera/galeri, disimpan ke Supabase Storage |
+| Dashboard | Ringkasan harian: total mobil, tersedia, sewa aktif, dan pendapatan |
 
 ---
 
 ## Materi yang Diimplementasikan
 
 ### Widget
-
-Widget Flutter yang digunakan dalam aplikasi:
 
 | Widget | Fungsi |
 |--------|--------|
@@ -55,7 +53,7 @@ Widget Flutter yang digunakan dalam aplikasi:
 | `SingleChildScrollView` | Layout scrollable pada form dan dashboard |
 | `InkWell` + `Container` | Tombol custom bergaya neobrutalism |
 | `CircularProgressIndicator` | Indikator loading saat proses berlangsung |
-| `SnackBar` (custom) | Notifikasi feedback dengan tombol OK |
+| `SnackBar` | Notifikasi feedback dengan tombol OK |
 | `Row` + `Expanded` | Layout kartu statistik berdampingan di dashboard |
 
 ---
@@ -67,8 +65,8 @@ Aplikasi menggunakan **Provider** dengan dua `ChangeNotifier`:
 ```dart
 MultiProvider(
   providers: [
-    ChangeNotifierProvider(create: (_) => AppStore()),      // data mobil & rental
-    ChangeNotifierProvider(create: (_) => ThemeProvider()), // dark/light mode
+    ChangeNotifierProvider(create: (_) => AppStore()),
+    ChangeNotifierProvider(create: (_) => ThemeProvider()),
   ],
   child: const MyApp(),
 )
@@ -84,14 +82,7 @@ MultiProvider(
 
 ### Navigation
 
-Navigasi menggunakan **Navigator** bawaan Flutter dengan `MaterialPageRoute`:
-
-```dart
-Navigator.push(context, MaterialPageRoute(builder: (_) => CarFormScreen()));
-Navigator.pop(context);
-```
-
-Alur navigasi aplikasi:
+Navigasi menggunakan Navigator bawaan Flutter dengan `MaterialPageRoute`.
 
 ```
 LoginScreen
@@ -113,9 +104,9 @@ LoginScreen
 |---------|--------|
 | Authentication | Login email & password, pantau session via `onAuthStateChange` |
 | PostgreSQL Database | Tabel `cars` dan `rentals` |
-| Storage | Upload & akses foto mobil di bucket `car_images` |
+| Storage | Upload dan akses foto mobil di bucket `car_images` |
 
-Semua operasi dipusatkan di `lib/services/supabase_service.dart`:
+Semua operasi dipusatkan di `lib/services/supabase_service.dart`.
 
 ```dart
 static Future<String> uploadCarImage(File imageFile) async {
@@ -127,9 +118,9 @@ static Future<String> uploadCarImage(File imageFile) async {
 
 ---
 
-### Konfigurasi `.env`
+### Konfigurasi .env
 
-Kredensial API disimpan menggunakan **`flutter_dotenv`** dan tidak di-push ke GitHub.
+Kredensial API disimpan menggunakan `flutter_dotenv` dan tidak di-push ke GitHub.
 
 ```env
 SUPABASE_URL=https://your-project-id.supabase.co
@@ -152,7 +143,7 @@ flutter:
     - .env
 ```
 
-> Jangan commit file `.env` ke GitHub. Gunakan `.env.example` sebagai template.
+> Jangan commit file `.env` ke GitHub. Gunakan `.env.example` sebagai template untuk kolaborator.
 
 ---
 
@@ -160,7 +151,7 @@ flutter:
 
 | Package | Versi | Fungsi |
 |---------|:-----:|--------|
-| `provider` | ^6.1.1 | State management (AppStore + ThemeProvider) |
+| `provider` | ^6.1.1 | State management — AppStore dan ThemeProvider |
 | `intl` | ^0.18.1 | Format Rupiah dan tanggal lokal `id_ID` |
 | `flutter_local_notifications` | ^21.0.0 | Notifikasi terjadwal pengingat durasi sewa |
 | `timezone` | ^0.11.0 | Zona waktu `Asia/Makassar` (WITA) untuk notifikasi |
@@ -170,7 +161,7 @@ flutter:
 
 ## Cara Instalasi
 
-**Prasyarat:** Flutter SDK `>=3.0.0 <4.0.0`, Android Studio / VS Code, akun Supabase aktif.
+Prasyarat: Flutter SDK `>=3.0.0 <4.0.0`, Android Studio atau VS Code, akun Supabase aktif.
 
 ```bash
 # 1. Clone repositori
@@ -179,7 +170,7 @@ cd rental_mobil_mainan
 
 # 2. Buat file .env
 cp .env.example .env
-# Edit .env dan isi SUPABASE_URL & SUPABASE_ANON_KEY
+# Isi SUPABASE_URL dan SUPABASE_ANON_KEY
 
 # 3. Install dependencies
 flutter pub get
@@ -188,7 +179,7 @@ flutter pub get
 flutter run
 ```
 
-> URL dan Anon Key tersedia di **Supabase Dashboard → Project Settings → API**
+URL dan Anon Key tersedia di **Supabase Dashboard > Project Settings > API**.
 
 ---
 
@@ -196,15 +187,15 @@ flutter run
 
 ```
 lib/
-├── app_store.dart               # State global (Provider)
-├── main.dart                    # Entry point & inisialisasi
-├── notification_service.dart    # Notifikasi terjadwal (WITA)
+├── app_store.dart
+├── main.dart
+├── notification_service.dart
 ├── models/
-│   ├── car.dart                 # Model unit mobil
-│   ├── rental.dart              # Model penyewaan + kalkulasi harga
-│   └── queue_item.dart          # Model antrian
+│   ├── car.dart
+│   ├── rental.dart
+│   └── queue_item.dart
 ├── providers/
-│   └── theme_provider.dart      # Dark/Light mode
+│   └── theme_provider.dart
 ├── screens/
 │   ├── login_screen.dart
 │   ├── home_screen.dart
@@ -216,9 +207,9 @@ lib/
 │   ├── rental_detail_screen.dart
 │   └── rental_form_screen.dart
 ├── services/
-│   └── supabase_service.dart    # Semua operasi CRUD & Auth
+│   └── supabase_service.dart
 └── widgets/
-    └── custom_app_bar.dart      # AppBar custom neobrutalism
+    └── custom_app_bar.dart
 ```
 
 ---
@@ -230,30 +221,17 @@ Biaya sewa dihitung otomatis di model `Rental`:
 ```
 Total Biaya = (Durasi Menit ÷ 15) × Rp 20.000
 
-Contoh: 30 menit → (30 ÷ 15) × Rp 20.000 = Rp 40.000
-```
-
----
-
-## Kontribusi
-
-```bash
-git checkout -b fitur/nama-fitur
-git commit -m "feat: deskripsi fitur"
-git push origin fitur/nama-fitur
-# Buat Pull Request
+Contoh: 30 menit  →  (30 ÷ 15) × Rp 20.000  =  Rp 40.000
 ```
 
 ---
 
 ## Lisensi
 
-Didistribusikan di bawah lisensi **MIT**. Lihat [`LICENSE`](LICENSE) untuk detail.
+Didistribusikan di bawah lisensi MIT. Lihat [LICENSE](LICENSE) untuk detail.
 
 ---
 
 <div align="center">
-
-Dikembangkan sebagai Proyek Akhir Mobile · FARZATOYS RENTAL · 2026
-
+FARZATOYS RENTAL · Proyek Akhir Mobile 2026
 </div>
