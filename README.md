@@ -185,6 +185,7 @@ await Supabase.initialize(
 | `flutter_local_notifications` | ^21.0.0 | Notifikasi terjadwal pengingat akhir sewa |
 | `timezone` | ^0.11.0 | Zona waktu `Asia/Makassar` (WITA) |
 | `image_picker` | ^1.2.1 | Akses kamera & galeri perangkat |
+| `flutter_launcher_icons` | ^0.14.1 | Generate icon aplikasi untuk Android dan iOS |
 
 ---
 
@@ -193,16 +194,26 @@ await Supabase.initialize(
 > Prasyarat: Flutter `>=3.0.0`, Android Studio / VS Code, akun Supabase aktif.
 
 ```bash
-# Clone
+# 1. Clone repositori
 git clone https://github.com/Oxcyy/rental_mobil_mainan.git
 cd rental_mobil_mainan
 
-# Setup environment
+# 2. Buat file .env dari template
 cp .env.example .env
-# → Isi SUPABASE_URL dan SUPABASE_ANON_KEY
+```
 
-# Install & jalankan
+Isi file `.env` dengan kredensial Supabase kamu:
+
+```env
+SUPABASE_URL=https://your-project-id.supabase.co
+SUPABASE_ANON_KEY=your-anon-key-here
+```
+
+```bash
+# 3. Install dependencies
 flutter pub get
+
+# 4. Jalankan aplikasi
 flutter run
 ```
 
