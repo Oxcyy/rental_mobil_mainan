@@ -22,6 +22,41 @@
 
 ---
 
+## Daftar Isi
+
+- [Profil Anggota](#profil-anggota)
+- [Tentang Aplikasi](#tentang-aplikasi)
+- [Fitur](#fitur)
+- [Implementasi](#implementasi)
+  - [Widget](#widget)
+  - [State Management](#state-management--provider)
+  - [Navigation](#navigation)
+  - [Supabase](#supabase)
+  - [Konfigurasi .env](#konfigurasi-env)
+  - [Package Tambahan](#package-tambahan)
+- [Instalasi](#instalasi)
+- [Struktur Proyek](#struktur-proyek)
+- [Rumus Kalkulasi Biaya](#rumus-kalkulasi-biaya)
+- [Lisensi](#lisensi)
+
+---
+
+## Profil Anggota
+
+**Kelompok :** (isi nomor kelompok)  
+**Kelas :** Sistem Informasi  
+**Mata Kuliah :** Pemrograman Mobile
+
+| Nama | NIM | Kelas | GitHub |
+|------|-----|-------|--------|
+| Yulius Pune' | 2409116110 | Sistem Informasi C '24 | [![GitHub](https://img.shields.io/badge/Oxcyy-181717?style=flat-square&logo=github&logoColor=white)](https://github.com/Oxcyy) |
+| Anggota 2 | - | - | - |
+| Anggota 3 | - | - | - |
+| Anggota 4 | - | - | - |
+| Anggota 5 | - | - | - |
+
+---
+
 ## Tentang Aplikasi
 
 **FARZATOYS RENTAL** adalah aplikasi mobile yang dibangun dengan Flutter untuk membantu mitra usaha penyewaan mobil mainan mengelola armada, data penyewa, dan transaksi secara digital. Seluruh data tersimpan di cloud menggunakan Supabase — real-time, aman, dan mudah diakses.
